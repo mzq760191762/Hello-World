@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+	*{ margin: 0; padding: 0 }
+	a{ text-decoration: none;}
+	ul{ list-style: none;}
+		html{height: 100%;font-size:100px;}
+		body{ height: 100%; width: 100%}
+		#box{height: 100%; width: 100%; background: linear-gradient(130deg,#5dc37c,#319189,#125ca2); position: relative; overflow: hidden;}
+		.mb{ height: 100%; width: 100%; background: rgba(255,255,255,0.2); position: absolute; left: 0;  animation: bg .8s; text-align: center; transition: all 0.5s; z-index: 10;}
+		.mb span{ display: block; line-height: 0.3rem; color: #fff; font-size: 0.16rem }
+		.mb span a{ color: #fff; text-decoration: none; display: block; transition: all .8s;}
+		.mb span:nth-of-type(5) a:hover{ text-shadow: 0 0 0.2rem #fff;  }
+		.mb .mbbox{ position: absolute; left: 50%; top: 50%; transform: translate(-50%,-53%); transition: all 0.5s; }
+		.mb .tx{ height: 1rem; width: 1rem; border:0.02rem solid #fff; border-radius: 50%; display: inline-block; margin-bottom:0.45rem; overflow: hidden; text-align: center; background: #fff}
+		.mb .tx img{ width: 1rem }
+		.mb .xq{ width:0.8rem; background: rgba(255,255,255,0); border: 1px solid #fff;  border-radius: 0.5rem; display: inline-block; text-align: center; margin-top: 0.2rem; transition: all 0.5s;}
+		.mb .xq p,.main .fh p{ line-height: 0.3rem; margin-top: 0.03rem; width: 100%; color: #fff; font-size: 0.16rem;  transition: all 0.4s; cursor: pointer;user-select: none;}
+		.mb .xq:hover{ background: #FFFFFF; }
+		.mb .xq:hover p{
+						    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(93,195,124, 1)), to(rgba(18, 92, 162, 1)));
+						    -webkit-background-clip: text;
+						    -webkit-text-fill-color: transparent;
+						    
+						}
+		.main{height: 100%; width: 70%;opacity: 0; transform: scale(0.8);transition: all 0.5s 0.1s;z-index: 5; margin: 0 auto; overflow: hidden; position: relative;user-select: none;  }
+		.mainbox{  position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%); width:100%; height: 80%   }
+		.main .fh{ width: 0.8rem; background: rgba(255,255,255,0); border: 1px solid #fff;  border-radius: 0.5rem; display: inline-block; text-align: center; margin-top: 0.2rem; transition: all 0.5s; position: absolute; left: 50%; top: 70%; transform: translate(-50%,-50%);}
+		.main .fh:hover{ background: #FFFFFF; }
+		.main .fh:hover p{
+						    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(93,195,124, 1)), to(rgba(18, 92, 162, 1)));
+						    -webkit-background-clip: text;
+						    -webkit-text-fill-color: transparent;
+						    
+						}
+		.mainbox .dian{width: auto; height: auto; position: absolute; left: 0; top: 50%; transform: translate(0 -50%);}
+		.mainbox .dian span{ height: 0.08rem; width: 0.08rem; background: rgba(255,255,255,0.5); border-radius: 50%; display: block; margin:0.05rem 0; transition: all 0.5s; }
+		.mainbox .xiangqing{ height: 60%; width: 80%; margin: 0 auto;overflow: hidden; position: relative; margin: 0 auto; transform:translateY(30%) }
+		.mainbox .jn{ text-align: center; padding-top: 0.35rem; position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%); width:100%; transition: all 0.5s; margin-top: 0.3rem;}
+		.mainbox .jn h4{ color: #fff; font-size: 0.2rem; line-height: 0.4rem; padding-bottom:0.35rem; }
+		.mainbox .jn ul{display: inline-block; margin-top: 0.2rem; text-align: center;}
+		.mainbox .jn li{ width: 0.8rem; height: 0.8rem; border:1px solid #fff ; border-radius: 0.8rem; float: left; text-align: center;  color: #fff;margin: 0.1rem 0.2rem;cursor:default; transition: all 0.8s;}
+		.mainbox .jn p{line-height:0.8rem; font-size: 0.16rem; height: 0.8rem; transition: all 0.5s;}
+		.mainbox .jn li:hover{ box-shadow: 0 0 0.1rem #fff inset;}
+		.mainbox .jn li:nth-of-type(1):hover{ transform:translateX(21%)}
+		.mainbox .jn li:nth-of-type(2):hover{ transform:translateX(14%)}
+		.mainbox .jn li:nth-of-type(3):hover{ transform:translateX(7%)}
+		.mainbox .jn li:nth-of-type(4):hover{ transform:translateX(0%)}
+		.mainbox .jn li:nth-of-type(5):hover{ transform:translateX(-7%)}
+		.mainbox .jn li:nth-of-type(6):hover{ transform:translateX(-14%)}
+		.mainbox .jn li:nth-of-type(7):hover{ transform:translateX(-21%)}
+		.mainbox .jy{ text-align: center;}
+		.mainbox .jy ul{ display: inline-block; }
+		.mainbox .jy li{ height: 1rem; width: 1rem; border:0.01rem solid #fff ; border-radius: 50%; overflow: hidden;}
+		.mainbox .jy li img{ width: 100%; }
+		.mainbox .gz{ position: absolute; left: 50%; top:110%; transform: translate(-50%,-50%); transition: all 0.5s;}
+		.mainbox .gz h4{  color: #fff; font-size: 0.2rem; line-height: 0.4rem; padding-bottom:0.35rem;  }
+		.mainbox .gr{ position: absolute; left: 50%; top:160%; transform: translate(-50%,-50%); transition: all 0.5s;}
+		.mainbox .gr h4{  color: #fff; font-size: 0.2rem; line-height: 0.4rem; padding-bottom:0.35rem;  }
+		@keyframes bg{
+			0%{ top: -100%; }
+
+			100%{ top:0%; }
+		}
+		@keyframes bd{
+			0%{ opacity: 0;}
+			50%{ opacity: 1;}
+			100%{ opacity: 0;}
+		}
+		@keyframes dj{
+			0%{ background: rgba(255,255,255,.3);box-shadow: 0 0 0 #fff; }
+			50%{ background: rgba(255,255,255,.9);box-shadow: 0 0 0.07rem #fff;}
+			100%{ background: rgba(255,255,255,.3);box-shadow: 0 0 0 #fff; }
+		}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="https://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+</head>
+<script type="text/javascript">
+   $youziku.load("body",  "f9a806e23f474e978dd830613b391f34", "Source-Han-Light");
+   /*$youziku.load("#id1,.class1,h1", "f49875a71aff4601bf504fe57da266ee", "HanWangYenThin-Gb5");*/
+   /*．．．*/
+   $youziku.draw();
+</script>
+<body>
+<div id="box">
+	<section class="mb">
+		<div class=mbbox>
+			<div class="tx">
+				<img src="images/tx.jpg">
+			</div>
+			<span>阿苏大</span>
+			<span>22岁</span>
+			<span>北京市-海淀区</span>
+			<span>546546546</span>
+			<span><a href="mailto:EMAIL">mazqys@163.com</a></span>
+
+			<div class="xq">
+				<p>详情</p>
+			</div>
+		</div>
+	</section>
+	<section class="main">
+		<div class="mainbox">
+			<div class="dian">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="xiangqing">
+				<div class="jn sj">
+					<h4>擅长</h4>
+					<ul>
+						<li>
+							<p>Js</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+						<li>
+							<p>Vue</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+						<li>
+							<p>Jquery</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+						<li>
+							<p>HTML5</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+						<li>
+							<p>CSS3</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+						<li>
+							<p>Angular</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+						<li>
+							<p>Node</p>
+							<div class="ccinn">
+
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="gz sj">
+					<h4>工作经验</h4>
+				</div>
+				<div class="gr sj">
+					<h4>个人资料</h4>
+				</div>
+			</div>
+		</div>
+		<div class="fh"><p>返回</p></div>
+	</section>
+</div>
+</body>
+
+</html>
+<script type="text/javascript">
+    var _w=document.documentElement.clientWidth||document.body.clientWidth;
+    var _size=100/(1920/_w);
+    document.documentElement.style.fontSize=_size+"px";
+	$(".xq p").click(function(){
+		$(".mbbox").css({"transform":"translate(-50%,-53%)scale(1.3)"})
+		$(".mb").css("opacity","0")
+		setTimeout(function(){
+			$(".mb").css("display","none")
+		},800)
+		$(".main").css({"opacity":"1","transform":"scale(1)"})
+	})
+	$(".fh p").click(function(){
+		$(".mb").css("display","block")
+		$(".main").css({"opacity":"0","transform":"scale(0.8)"})
+		$(".mbbox").css({"transform":"translate(-50%,-53%)scale(1)"})
+		$(".mb").css("opacity","1")
+	})
+	for(var i=0; i<$(".jn li").length; i++){
+		var l=$(".jn li:eq(i)").left
+		console.log(l)
+	$(".jn li").hover(
+		function(){
+			$(this).css({"height":"3rem","width":"6rem"})
+            $(this).siblings().css({"opacity":"0","height":"0rem","width":"0rem","line-height":"0rem"})
+            $(this).siblings().children("p").css({"height":"0rem","line-height":"0rem","font-size":"0rem"})
+			var _this=$(this)
+		
+		},
+		function(){
+			
+			$(this).css({"height":"0.8rem","width":"0.8rem"})
+			
+			var _this=$(this)
+			
+				$(this).siblings().css({"opacity":"1","height":"0.8rem","width":"0.8rem","line-height":"0.8rem"})
+            	$(this).siblings().children("p").css({"height":"0.8rem","line-height":"0.8rem","font-size":"0.16rem"})
+
+		}
+		)
+	}
+
+    
+
+</script>
